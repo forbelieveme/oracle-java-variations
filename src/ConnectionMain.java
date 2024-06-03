@@ -32,9 +32,13 @@ public class ConnectionMain {
 	        System.out.println("Driver Name: " + dbmd.getDriverName());
 	        System.out.println("Driver Version: " + dbmd.getDriverVersion());
 	        System.out.println();
-	        // Perform a database operation 
-	        SimpleQuery simpleQuery = new SimpleQuery();
-	        simpleQuery.printEmployees(connection);
+	        
+			// Perform a database operation 
+	        // SimpleQuery simpleQuery = new SimpleQuery();
+	        // simpleQuery.printEmployees(connection);
+	        
+			TypeQuery typeQuery = new TypeQuery();
+	        typeQuery.printEmployees(connection);
 	      }  
 		System.out.println("Hello World");
 
