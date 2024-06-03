@@ -12,22 +12,22 @@ import oracle.sql.STRUCT;
 
 public class ArrayReturnQuery {
     
-    public static void printEmployeeById(Connection connection, Integer employeeId)
+    public static void printEmployeeById(Connection connection, Integer id)
             throws SQLException {
 
         CallableStatement callableStatement = null;
         StringBuilder sbuf = new StringBuilder();
 
-        String sqlQuery = "{CALL TESTUSER.GET_EMPLOYEES_BY_ID(?, ?, ?)}";
+        String sqlQuery = "{CALL GET_EMPLOYEES_BY_ID(?, ?, ?)}";
 
         try {
 
             callableStatement = connection.prepareCall(sqlQuery);
 
-            callableStatement.setLong(1, employeeId);
+            callableStatement.setLong(1, id);
 
             callableStatement.registerOutParameter(2, OracleTypes.NUMBER);
-            callableStatement.registerOutParameter(3, OracleTypes.ARRAY, "TESTUSER.EMP_ARRAY");
+            callableStatement.registerOutParameter(3, OracleTypes.ARRAY, "EMP_ARRAY");
 
             callableStatement.execute();
 

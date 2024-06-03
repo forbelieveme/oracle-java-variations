@@ -13,7 +13,7 @@ import oracle.jdbc.pool.OracleDataSource;
 public class ConnectionMain {
 
 	final static String DB_URL = "jdbc:oracle:thin:@localhost:1521/XE";
-	final static String DB_USER = "sys as sysdba";
+	final static String DB_USER = "testuser";
 	final static String DB_PASSWORD = "password";
 
 	public static void main(String[] args) throws SQLException {
@@ -42,7 +42,7 @@ public class ConnectionMain {
 
 			ArrayReturnQuery arrayReturnQuery = new ArrayReturnQuery();
 			// arrayReturnQuery.printEmployees(connection);
-			arrayReturnQuery.printEmployeeById(connection, 5);
+			arrayReturnQuery.printEmployeeById(connection, 2);
 		}
 		System.out.println("Hello World");
 
