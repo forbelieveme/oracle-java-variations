@@ -9,7 +9,7 @@ public class SimpleQuery {
 			throws SQLException {
 
 		// Statement and ResultSet are AutoCloseable and closed automatically.
-		String sqlQuery = "select employee_id, concat(concat(first_name, ' '), last_name) as full_name from testuser.employees where employee_id>6";
+		String sqlQuery = "SELECT EMPLOYEE_ID, CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) AS FULL_NAME FROM TESTUSER.EMPLOYEES WHERE EMPLOYEE_ID > 6";
 		try (Statement statement = connection.createStatement()) {
 			try (ResultSet resultSet = statement
 					.executeQuery(sqlQuery)) {
